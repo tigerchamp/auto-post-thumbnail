@@ -361,12 +361,15 @@ function apt_generate_post_thumb($matches, $key, $post_content, $post_id)
         return null;
     }
 
+    /* This fix prevents the files with multiple dots like "a.jpg.b.jpg", comment out
+
     //Fix for checking file extensions
     $exts = explode(".",$filename);
 	if(count($exts)>2)return null;
 	$allowed=get_allowed_mime_types();
 	$ext=pathinfo($new_file,PATHINFO_EXTENSION);
 	if(!array_key_exists($ext,$allowed))return null;
+    */
 
     file_put_contents($new_file, $file_data);
 
